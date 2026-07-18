@@ -5,8 +5,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -29,6 +32,14 @@ public class Topic {
 
     @ManyToMany(mappedBy = "topics")
     private Set<Item> items;
+
+    @ManyToMany
+    @JoinTable(
+        name = "topic_relationship",
+        joinColumns = @JoinColumn(name = "topic_left_id"),
+        inverseJoinColumns = @JoinColumn(name = "topic_right_id")
+    )
+    private Set<Topic> relatedTopics = new HashSet<>();
 
     public Topic() {
     }

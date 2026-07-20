@@ -31,6 +31,7 @@ public class ItemService {
             || item.getDate() == null
             || item.getSource() == null
             || item.getSourceKind() == null
+            || item.getTopics().isEmpty()
             ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
                 "Invalid item: " + item);

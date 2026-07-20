@@ -1,6 +1,7 @@
 package com.br.neo_curator.entity;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 import com.br.neo_curator.entity.enums.ItemType;
@@ -52,7 +53,7 @@ public class Item {
         joinColumns = @JoinColumn(name = "itm_id"),
         inverseJoinColumns = @JoinColumn(name = "top_id")
     )
-    private Set<Topic> topics;
+    private Set<Topic> topics = new HashSet<>();
 
     @ManyToMany
     @JoinTable(

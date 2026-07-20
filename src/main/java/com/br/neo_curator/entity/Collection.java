@@ -1,5 +1,6 @@
 package com.br.neo_curator.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -24,7 +25,7 @@ public class Collection {
     private String description;
 
     @ManyToMany(mappedBy = "collections")
-    private Set<Item> items;
+    private Set<Item> items = new HashSet<>();
 
     public Collection() {
     }

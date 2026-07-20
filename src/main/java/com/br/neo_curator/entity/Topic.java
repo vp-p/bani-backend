@@ -30,7 +30,7 @@ public class Topic {
     private Short weight = 0;
 
     @ManyToMany(mappedBy = "topics")
-    private Set<Item> items;
+    private Set<Item> items = new HashSet<>();
 
     @ManyToMany
     @JoinTable(

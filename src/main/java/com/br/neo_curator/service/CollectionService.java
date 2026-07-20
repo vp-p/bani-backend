@@ -26,7 +26,7 @@ public class CollectionService {
     public Collection newCollection(Collection collection){
         if(collection == null || collection.getDescription() == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
-                "Invalid collection description: " + collection);
+                "Invalid collection: " + collection);
         }
         return collectionRepository.save(collection);
     }

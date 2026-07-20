@@ -26,7 +26,7 @@ public class TopicService {
     public Topic newTopic(Topic topic){
         if(topic == null || topic.getDescription() == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
-                "Invalid topic description: " + topic);
+                "Invalid topic: " + topic);
         }
         return topicRepository.save(topic);
     }

@@ -12,7 +12,7 @@ import com.br.neo_curator.entity.Topic;
 import com.br.neo_curator.repository.TopicRepository;
 
 @Service
-public class TopicService {
+public class TopicService implements ITopicService {
     
     @Autowired
     private TopicRepository topicRepository;

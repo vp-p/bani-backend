@@ -12,7 +12,7 @@ import com.br.neo_curator.entity.Item;
 import com.br.neo_curator.repository.ItemRepository;
 
 @Service
-public class ItemService {
+public class ItemService implements IItemService {
     
     @Autowired
     private ItemRepository itemRepository;

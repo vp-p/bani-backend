@@ -23,7 +23,7 @@ The project centralizes knowledge from multiple sources into a single library, a
 - Semantic search with embeddings
 - AI-assisted summaries and tagging
 - Knowledge graph
-- Personalized learning paths
+- Rabbit hole (Personalized learning paths)
 - Learning analytics dashboard
 
 ## Tech Stack

@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.br.neo_curator.entity.Collection;
 import com.br.neo_curator.repository.CollectionRepository;
 
-public class CollectionService {
+public class CollectionService implements ICollectionService {
     
     @Autowired
     private CollectionRepository collectionRepository;

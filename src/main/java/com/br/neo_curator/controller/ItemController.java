@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.neo_curator.entity.Topic;
-import com.br.neo_curator.service.ITopicService;
+import com.br.neo_curator.entity.Item;
+import com.br.neo_curator.service.ItemService;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/topic")
-public class TopicController {
+@RequestMapping(value = "/item")
+public class ItemController {
 
     @Autowired
-    private ITopicService service;
+    private ItemService service;
 
     @GetMapping
-    public List<Topic> findAll(){
+    public List<Item> findAll(){
         return service.findAll();
     }
 
-    @GetMapping(value = "/{topic}")
-    public Topic findById(@PathVariable ("topic") Long id){
+    @GetMapping(value = "/{item}")
+    public Item findById(@PathVariable ("item") Long id){
         return service.findById(id);
     }
 
     @PostMapping
-    public Topic newTopic(@RequestBody Topic topic){
-        return service.newTopic(topic);
+    public Item newItem(@RequestBody Item item){
+        return service.newItem(item);
     }
 }

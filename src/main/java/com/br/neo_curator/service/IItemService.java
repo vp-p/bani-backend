@@ -8,7 +8,7 @@ public interface IItemService {
     
     public Item findById(Long id);
     
-    public Item newitem(Item item);
+    public Item newItem(Item item);
 
     public List<Item> findAll();
 }

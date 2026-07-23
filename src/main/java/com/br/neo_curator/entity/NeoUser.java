@@ -17,23 +17,23 @@ public class NeoUser {
     @Column(name = "usr_id")
     private Long id;
 
-    @Column(name = "usr_name")
-    private String name;
+    @Column(name = "usr_userName")
+    private String userName;
 
     @Column(name = "usr_password")
     private String password;
 
-    public NeoUser(String name, String password) {
-        this.name = name;
+    public NeoUser(String userName, String password) {
+        this.userName = userName;
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {

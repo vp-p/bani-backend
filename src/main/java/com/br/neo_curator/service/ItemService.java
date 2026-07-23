@@ -25,7 +25,7 @@ public class ItemService implements IItemService {
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid item id: " + id);
     }
 
-    public Item newitem(Item item){
+    public Item newItem(Item item){
         if(item == null
             || item.getTitle() == null
             || item.getDescription() == null

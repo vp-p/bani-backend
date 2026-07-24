@@ -17,7 +17,7 @@ public class NeoUser {
     @Column(name = "usr_id")
     private Long id;
 
-    @Column(name = "usr_userName")
+    @Column(name = "usr_username")
     private String userName;
 
     @Column(name = "usr_password")

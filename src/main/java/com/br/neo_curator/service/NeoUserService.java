@@ -28,7 +28,7 @@ public class NeoUserService implements INeoUserService {
     public NeoUser newNeoUser(NeoUser neoUser){
         if(neoUser == null || neoUser.getUserName() == null || neoUser.getPassword() == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
-                "Invalid neoUser: " + neoUser);
+                "Invalid username or password!");
         }
         return neoUserRepository.save(neoUser);
     }

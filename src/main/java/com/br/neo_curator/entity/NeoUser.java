@@ -26,6 +26,9 @@ public class NeoUser {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)  
     private String password;
 
+    public NeoUser() {
+    }
+
     public NeoUser(String userName, String password) {
         this.userName = userName;
         this.password = password;

@@ -59,5 +59,7 @@ public class NeoUser {
         this.password = password;
     }
 
-    
+    public Set<Collection> getCollections() {
+        return collections;
+    }
 }

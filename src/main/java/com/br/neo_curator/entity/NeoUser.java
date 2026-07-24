@@ -1,5 +1,7 @@
 package com.br.neo_curator.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +23,11 @@ public class NeoUser {
     private String userName;
 
     @Column(name = "usr_password")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)  
     private String password;
+
+    public NeoUser() {
+    }
 
     public NeoUser(String userName, String password) {
         this.userName = userName;

@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.br.neo_curator.entity.Item;
-import com.br.neo_curator.repository.ItemRepository;
+import com.br.neo_curator.repository.IItemRepository;
 
 @Service
 public class ItemService implements IItemService {
     
     @Autowired
-    private ItemRepository itemRepository;
+    private IItemRepository itemRepository;
 
     public Item findById(Long id){
         Optional<Item> itemOp = itemRepository.findById(id);

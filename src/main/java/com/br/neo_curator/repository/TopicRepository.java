@@ -1,9 +1,14 @@
 package com.br.neo_curator.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
 
 import com.br.neo_curator.entity.Topic;
 
-public interface TopicRepository extends JpaRepository<Topic, Long> {
+public interface TopicRepository extends ITopicRepository {
+    
+    public Optional<Topic> findByDescription(String description);
+    public List<Topic> findByDescriptionContaining(String description);
+    public List<Topic> findTop10ByOrderByWeightDesc();
     
 }

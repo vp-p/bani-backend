@@ -9,10 +9,6 @@ public interface ItemRepository extends IItemRepository {
     
     public Optional<Item> findByDescription(String description);
     public List<Item> findByDescriptionContaining(String description);
-    public List<Item> findByTopicDescriptionContaining(String description);
-    public List<Item> findByTopicId(Long id);
-    public List<Item> findByCollectionDescriptionContaining(String description);
-    public List<Item> findByCollectionId(Long id);
     public List<Item> findTop20ByOrderByDateDesc();
     public List<Item> findByType(ItemType type);
     public List<Item> findBySourceKindContaining(String source);

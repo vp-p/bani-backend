@@ -9,6 +9,5 @@ public interface CollectionRepository extends ICollectionRepository {
     
     public Optional<Collection> findByDescription(String description);
     public List<Collection> findByDescriptionContaining(String description);
-    public List<Collection> findByNeoUserId(Long id);
-    public List<Collection> findByItemContainingDescription(String description);
+
 }

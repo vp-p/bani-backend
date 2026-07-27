@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.br.neo_curator.entity.Topic;
 
-public interface TopicRepositoryImpl extends TopicRepository {
+public interface TopicRepository extends ITopicRepository {
     
     public Optional<Topic> findByDescription(String description);
     public List<Topic> findByDescriptionContaining(String description);

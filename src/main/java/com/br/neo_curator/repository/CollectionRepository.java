@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.br.neo_curator.entity.Collection;
 
-public interface CollectionRepositoryImpl extends CollectionRepository {
+public interface CollectionRepository extends ICollectionRepository {
     
     public Optional<Collection> findByDescription(String description);
     public List<Collection> findByDescriptionContaining(String description);

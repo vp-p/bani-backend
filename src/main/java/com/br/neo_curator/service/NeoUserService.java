@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.br.neo_curator.entity.NeoUser;
-import com.br.neo_curator.repository.NeoUserRepository;
+import com.br.neo_curator.repository.INeoUserRepository;
 
 @Service
 public class NeoUserService implements INeoUserService {
     
     @Autowired
-    private NeoUserRepository neoUserRepository;
+    private INeoUserRepository neoUserRepository;
 
     public NeoUser findById(Long id){
         Optional<NeoUser> neoUserOp = neoUserRepository.findById(id);

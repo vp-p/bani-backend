@@ -3,6 +3,8 @@ package com.br.neo_curator.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Topic {
     private Short weight = 0;
 
     @ManyToMany(mappedBy = "topics")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Item> items = new HashSet<>();
 
     @ManyToMany

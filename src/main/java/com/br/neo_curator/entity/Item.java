@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.br.neo_curator.entity.enums.ItemType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -61,6 +62,7 @@ public class Item {
         joinColumns = @JoinColumn(name = "itm_id"),
         inverseJoinColumns = @JoinColumn(name = "col_id")
     )
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Collection> collections;
 
     public Item() {

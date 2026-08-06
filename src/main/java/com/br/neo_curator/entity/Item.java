@@ -58,7 +58,7 @@ public class Item {
 
     @ManyToMany
     @JoinTable(
-        name = "item_collection",
+        name = "item_collections",
         joinColumns = @JoinColumn(name = "itm_id"),
         inverseJoinColumns = @JoinColumn(name = "col_id")
     )

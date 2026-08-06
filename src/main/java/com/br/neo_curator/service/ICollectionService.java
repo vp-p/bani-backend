@@ -2,13 +2,13 @@ package com.br.neo_curator.service;
 
 import java.util.List;
 
-import com.br.neo_curator.entity.Collection;
+import com.br.neo_curator.entity.Collections;
 
 public interface ICollectionService {
     
-    public Collection findById(Long id);
+    public Collections findById(Long id);
     
-    public Collection newCollection(Collection collection);
+    public Collections newCollection(Collections collection);
     
-    public List<Collection> findAll();
+    public List<Collections> findAll();
 }

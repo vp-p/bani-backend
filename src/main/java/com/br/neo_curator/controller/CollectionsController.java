@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.neo_curator.entity.Collections;
-import com.br.neo_curator.service.ICollectionService;
+import com.br.neo_curator.service.ICollectionsService;
 
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/collection")
-public class CollectionController {
+public class CollectionsController {
 
     @Autowired
-    private ICollectionService service;
+    private ICollectionsService service;
 
     @GetMapping
     public List<Collections> findAll(){
         return service.findAll();
     }
 
-    @GetMapping(value = "/{collection}")
-    public Collections findById(@PathVariable ("collection") Long id){
+    @GetMapping(value = "/{collections}")
+    public Collections findById(@PathVariable ("collections") Long id){
         return service.findById(id);
     }
 

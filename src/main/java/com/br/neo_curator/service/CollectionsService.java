@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.br.neo_curator.entity.Collections;
-import com.br.neo_curator.repository.ICollectionRepository;
+import com.br.neo_curator.repository.ICollectionsRepository;
 
 @Service
-public class CollectionService implements ICollectionService {
+public class CollectionsService implements ICollectionsService {
     
     @Autowired
-    private ICollectionRepository collectionRepository;
+    private ICollectionsRepository collectionRepository;
 
     public Collections findById(Long id){
         Optional<Collections> collectionOp = collectionRepository.findById(id);

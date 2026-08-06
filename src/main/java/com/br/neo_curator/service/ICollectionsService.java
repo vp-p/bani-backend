@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.br.neo_curator.entity.Collections;
 
-public interface ICollectionService {
+public interface ICollectionsService {
     
     public Collections findById(Long id);
     

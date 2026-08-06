@@ -41,7 +41,7 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Set<Collection> collections = new HashSet<>();
+    private Set<Collections> collections = new HashSet<>();
 
     public User() {
     }
@@ -76,8 +76,8 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-    public void setCollections(Set<Collection> collections) {
-        this.collections = collections;
+    public Set<Collections> getCollections() {
+        return collections;
     }
 
     @Override

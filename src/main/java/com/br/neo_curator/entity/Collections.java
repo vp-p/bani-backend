@@ -3,6 +3,8 @@ package com.br.neo_curator.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,9 +17,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "collection")
+@Table (name = "collections")
 
-public class Collection {
+public class Collections {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,20 +32,21 @@ public class Collection {
     @ManyToMany(mappedBy = "collections")
     private Set<Item> items = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usr_id")
-    private NeoUser neoUser;
+    @JsonIgnore 
+    private User user;
 
-    public Collection() {
+    public Collections() {
     }
 
-    public Collection(String description, Set<Item> items, NeoUser neoUser) {
+    public Collections(String description, Set<Item> items,  User user) {
         this.description = description;
         this.items = items;
-        this.neoUser = neoUser;
+        this.user = user;
     }
 
-    public Collection(String description) {
+    public Collections(String description) {
         this.description = description;
     }
 
@@ -55,12 +58,12 @@ public class Collection {
         this.description = description;
     }
 
-    public NeoUser getNeoUser() {
-        return neoUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setNeoUser(NeoUser neoUser) {
-        this.neoUser = neoUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     

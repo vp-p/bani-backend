@@ -8,24 +8,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.br.neo_curator.entity.Collection;
-import com.br.neo_curator.repository.ICollectionRepository;
+import com.br.neo_curator.entity.Collections;
+import com.br.neo_curator.repository.CollectionsRepository;
 
 @Service
-public class CollectionService implements ICollectionService {
+public class CollectionsService implements ICollectionsService {
     
     @Autowired
-    private ICollectionRepository collectionRepository;
+    private CollectionsRepository collectionRepository;
 
-    public Collection findById(Long id){
-        Optional<Collection> collectionOp = collectionRepository.findById(id);
+    public Collections findById(Long id){
+        Optional<Collections> collectionOp = collectionRepository.findById(id);
         if(collectionOp.isPresent()){
             return collectionOp.get();
         }
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid collection id: " + id);
     }
 
-    public Collection newCollection(Collection collection){
+    public Collections newCollection(Collections collection){
         if(collection == null || collection.getDescription() == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, 
                 "Invalid collection: " + collection);
@@ -33,7 +33,7 @@ public class CollectionService implements ICollectionService {
         return collectionRepository.save(collection);
     }
 
-    public List<Collection> findAll(){
+    public List<Collections> findAll(){
         return collectionRepository.findAll();
     }
 }

@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.neo_curator.entity.NeoUser;
-import com.br.neo_curator.service.INeoUserService;
+import com.br.neo_curator.entity.Collections;
+import com.br.neo_curator.service.ICollectionsService;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/neo-user")
-public class NeoUserController {
+@RequestMapping(value = "/collection")
+public class CollectionsController {
 
     @Autowired
-    private INeoUserService service;
+    private ICollectionsService service;
 
     @GetMapping
-    public List<NeoUser> findAll(){
+    public List<Collections> findAll(){
         return service.findAll();
     }
 
-    @GetMapping(value = "/{neoUser}")
-    public NeoUser findById(@PathVariable ("neoUser") Long id){
+    @GetMapping(value = "/{collections}")
+    public Collections findById(@PathVariable ("collections") Long id){
         return service.findById(id);
     }
 
     @PostMapping
-    public NeoUser newNeoUser(@RequestBody NeoUser neoUser){
-        return service.newNeoUser(neoUser);
+    public Collections newCollection(@RequestBody Collections collection){
+        return service.newCollection(collection);
     }
 }

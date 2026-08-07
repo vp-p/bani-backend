@@ -29,7 +29,7 @@ import jakarta.persistence.Table;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "usr_id")
     private String id;
 

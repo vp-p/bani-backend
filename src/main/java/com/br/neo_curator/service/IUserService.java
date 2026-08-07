@@ -6,7 +6,7 @@ import com.br.neo_curator.entity.User;
 
 public interface IUserService {
     
-    public User findById(Long id);
+    public User findById(String id);
     
     public User newUser(User user);
     

@@ -9,21 +9,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.br.neo_curator.entity.User;
-import com.br.neo_curator.repository.IUserRepository;
+import com.br.neo_curator.repository.UserRepository;
 
 @Service
 public class UserService implements IUserService {
     
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
 
-    public User findById(Long id){
+    public User findById(String id){
         Optional<User> userOp = userRepository.findById(id);
         if(userOp.isPresent()){
             return userOp.get();
         }
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid user id: " + id);
-    }
+    }  
 
     public User newUser(User user){
         if(user == null || user.getUsername() == null || user.getPassword() == null){

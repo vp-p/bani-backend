@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.br.neo_curator.entity.Topic;
-import com.br.neo_curator.repository.ITopicRepository;
+import com.br.neo_curator.repository.TopicRepository;
 
 @Service
 public class TopicService implements ITopicService {
     
     @Autowired
-    private ITopicRepository topicRepository;
+    private TopicRepository topicRepository;
 
     public Topic findById(Long id){
         Optional<Topic> topicOp = topicRepository.findById(id);

@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.neo_curator.dto.AuthenticationDTO;
+import com.br.neo_curator.dto.LoginResponseDTO;
 import com.br.neo_curator.dto.RegisterDTO;
 import com.br.neo_curator.entity.User;
 import com.br.neo_curator.repository.UserRepository;
+import com.br.neo_curator.service.TokenService;
 
 import jakarta.validation.Valid;
 
@@ -28,12 +30,17 @@ public class AuthenticationController {
     @Autowired
     private UserRepository repository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
+
+        var token = tokenService.generateToken((User)auth.getPrincipal());
     
-        return ResponseEntity.ok().body(auth);
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")

@@ -16,7 +16,7 @@ import com.br.neo_curator.entity.User;
 @Service
 public class TokenService {
 
-    @Value("${JWT_SECRET}")
+    @Value("${api.security.token.secret}")
     private String secret;
 
     public String getSecret() {

@@ -13,10 +13,10 @@
     </parent>
 
     <groupId>com.br</groupId>
-    <artifactId>neo_curator</artifactId>
+    <artifactId>bani_backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>neo_curator</name>
-    <description>Neo Curator API</description>
+    <name>bani_backend</name>
+    <description>Bani Backend API</description>
 
     <properties>
         <java.version>21</java.version>

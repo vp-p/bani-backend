@@ -14,6 +14,7 @@ import com.br.bani_backend.dto.AuthenticationDTO;
 import com.br.bani_backend.dto.LoginResponseDTO;
 import com.br.bani_backend.dto.RegisterDTO;
 import com.br.bani_backend.entity.User;
+import com.br.bani_backend.entity.enums.UserRole;
 import com.br.bani_backend.repository.UserRepository;
 import com.br.bani_backend.service.TokenService;
 
@@ -50,7 +51,7 @@ public class AuthenticationController {
         .build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = new User(data.username(), encryptedPassword, data.role());
+        User newUser = new User(data.username(), encryptedPassword, UserRole.USER);
 
         this.repository.save(newUser);
         return ResponseEntity.ok().build();
